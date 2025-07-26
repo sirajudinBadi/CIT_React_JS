@@ -4,9 +4,18 @@ import { useState } from "react"
 
 function App() {
 
-  const [counter, setCounter] = useState(0)
+  let [counter, setCounter] = useState(0)
 
-  // let counter = 5
+  const addValue = () =>{
+    // counter +
+    setCounter(counter+1)
+  }
+
+  const decreaseValue = () =>{
+    if (counter > 0){
+      setCounter(counter-1)
+    }
+  }
 
   return (
     <>
@@ -15,7 +24,7 @@ function App() {
 
       <button onClick={addValue}>Increase Value {counter}</button>
       <br />
-      <button>Decrease Value {counter}</button>
+      <button onClick={decreaseValue}>Decrease Value {counter}</button>
       <p>{counter}</p>
     </>
   )
